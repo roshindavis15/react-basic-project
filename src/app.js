@@ -4,33 +4,6 @@ import ReactDOM from "react-dom/client"
 
 
 
-// const heading1 = React.createElement(
-//     "h1",
-//     {
-//         id: "heading",
-       
-
-//     },
-//     "hey friendssss entthokksse  szzcugallee friendssss");
-    
-
-// const heading2 = (
-// <h1 id="title" key="hello">
-//     HEyyyyyy deyyy
-//     </h1>
-// )
-//     console.log( heading2);
-
-// const container=React.createElement(
-//     "div",
-//     {
-//         id:"container"
-//     },
-//     [heading1,heading2]
-// )
-
-
-
 const Title = () => {
     return (
         <a href="/">
@@ -64,26 +37,50 @@ const Header=()=>{
     )
 }
 
+const restaurantData = [
+    {
+        name: "chicking 1",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15",
+        cusines: ["Burgers", "American"],
+        rating: "4.2",
+    },
+    {
+        name: "chicking 2",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15",
+        cusines: ["Burgers", "American"],
+        rating: "4.2",
+    },
+    {
+        name: "chicking 3",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15",
+        cusines: ["Burgers", "American"],
+        rating: "4.2",
+    },
+];
 
-const RestruantCard =()=>{
+const RestruantCard = ({ restaurant }) => {
+    const { image, name, cusines, rating } = restaurant;
+
     return (
         <div className="card">
-            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15"></img>
-            <h2>Chicking</h2>
-            <h2>Burgers,American</h2>
-            <h4>4.2 stars</h4>
-
+            <img src={image} alt={name} />
+            <h2>{name}</h2>
+            <h2>{cusines.join(", ")}</h2>
+            <h4>{rating} stars</h4>
         </div>
-    )
-}
+    );
+};
 
-const Body=()=>{
-    return(
-        <div>
-           <RestruantCard/>
+const Body = () => {
+    return (
+        <div className="restraunt-list">
+            {restaurantData.map((restaurant, index) => (
+                <RestruantCard key={index} restaurant={restaurant} />
+            ))}
         </div>
-    )
-}
+    );
+};
+
 const Footer=()=>{
     return(
     <h1>this is footer part</h1>

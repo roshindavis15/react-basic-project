@@ -56,3 +56,8 @@
     color: #666;
     margin-top: 10px;
   }
+
+  .restraunt-list{
+    display: flex;
+    flex-wrap: wrap;
+  }

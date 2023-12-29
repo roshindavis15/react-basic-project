@@ -54,4 +54,9 @@
   font-size: 16px;
 }
 
+.restraunt-list {
+  flex-wrap: wrap;
+  display: flex;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
