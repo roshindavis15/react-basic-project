@@ -1,20 +1,23 @@
 export const restaurantData = [
     {
-        name: "chicking 1",
-        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15",
+        name: "Burger King",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/595b9676902e5e37c7990e80c020188e",
         cusines: ["Burgers", "American"],
         rating: "4.2",
+        id:"123"
     },
     {
-        name: "chicking 2",
-        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15",
-        cusines: ["Burgers", "American"],
+        name: "The Burger Junction",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/fralafdv3iw3pvtf4ocv",
+        cusines: ["Beverages", "American"],
         rating: "4.2",
+        id:"456"
     },
     {
-        name: "chicking 3",
-        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9a2a8a3a027a32c8938168f9d1194c15",
-        cusines: ["Burgers", "American"],
+        name: "Eat N chill",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e44b91b5b5ea794cba48940f792adcc8",
+        cusines: ["Beverages", "Palarivattom"],
         rating: "4.2",
+        id:"789"
     },
 ];

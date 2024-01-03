@@ -25,6 +25,21 @@
     border-radius: 50%;
 }
 
+  .login-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color:#df662f; 
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+.login-btn:hover {
+  background-color: #e01717;
+}
+
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -37,6 +52,8 @@
   
   .card:hover {
     transform: translateY(-5px);
+    background-color: #faf6f6;  
+
   }
   
   .card img {
@@ -57,7 +74,47 @@
     margin-top: 10px;
   }
 
-  .restraunt-list{
+  .restraunt-list{   
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    max-width: 300px; 
+    margin: 0 auto; 
+  }
+
+  .search-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    flex-grow: 1;
+  }
+
+  .search-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color:#df662f; 
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #e01717;
+  }
+  
+  .shimmer-card {
+    width: 200px;
+    height: 200px;
+    background: lightgrey;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
   }

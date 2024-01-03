@@ -1,4 +1,8 @@
+  
+  //restruant card component
+  
   const RestruantCard = ({ restaurant }) => {
+    
     const { image, name, cusines, rating } = restaurant;
 
     return (
