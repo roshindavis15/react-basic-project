@@ -1,7 +1,8 @@
 import { restaurantData } from "../config";
-import RestruantCard from "./restaurantCard";
+import RestruantCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
-import Shimmer from "./shimmer";
+import Shimmer from "./Shimmer";
+
 
 
 function filterData(searchInput,restaurantData){
