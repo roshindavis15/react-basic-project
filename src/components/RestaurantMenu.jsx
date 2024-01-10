@@ -6,10 +6,6 @@ const RestaurantMenu=({restaurantData})=>{
     const {id}=useParams();
     const selectedRestaurant=useSelectedRestaurant(id,restaurantData);
 
-  
-
-    
-
 
 return (
     <div>

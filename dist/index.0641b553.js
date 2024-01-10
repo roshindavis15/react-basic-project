@@ -34114,6 +34114,8 @@ var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
 var _react = require("react");
 var _shimmer = require("./Shimmer");
 var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+var _useCheckOnline = require("../../utils/useCheckOnline");
+var _useCheckOnlineDefault = parcelHelpers.interopDefault(_useCheckOnline);
 var _s = $RefreshSig$();
 function filterData(searchInput, restaurantData) {
     const filteredData = restaurantData.filter((restaurant)=>restaurant.name.includes(searchInput));
@@ -34124,9 +34126,17 @@ const Body = ()=>{
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)((0, _config.restaurantData)); //useState for restuarant
     const [searchInput, setSearchInput] = (0, _react.useState)(""); //useState for search
+    const isOnline = (0, _useCheckOnlineDefault.default)();
+    if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+        children: "you are offline"
+    }, void 0, false, {
+        fileName: "src/components/Body.jsx",
+        lineNumber: 17,
+        columnNumber: 12
+    }, undefined);
     return filteredRestaurants.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.jsx",
-        lineNumber: 14,
+        lineNumber: 19,
         columnNumber: 45
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -34143,7 +34153,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 16,
+                        lineNumber: 21,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34156,13 +34166,13 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 19,
+                        lineNumber: 24,
                         columnNumber: 18
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.jsx",
-                lineNumber: 15,
+                lineNumber: 20,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34172,18 +34182,22 @@ const Body = ()=>{
                         restaurant: restaurant
                     }, restaurant.id, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 35,
+                        lineNumber: 40,
                         columnNumber: 7
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.jsx",
-                lineNumber: 32,
+                lineNumber: 37,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "54vyT9PLuYxjIUYN6HGCr59uZyU=");
+_s(Body, "abtk41qheAcf2JoO+quxZRIFL34=", false, function() {
+    return [
+        (0, _useCheckOnlineDefault.default)
+    ];
+});
 _c = Body;
 exports.default = Body;
 var _c;
@@ -34194,7 +34208,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../config":"jtCLN","./RestaurantCard":"aYxHm","react":"21dqq","./Shimmer":"imnNo","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYxHm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../config":"jtCLN","./RestaurantCard":"aYxHm","react":"21dqq","./Shimmer":"imnNo","../../utils/useCheckOnline":"l1SeL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aYxHm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e6c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34304,7 +34318,39 @@ $RefreshReg$(_c, "Shimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"25EXR":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"l1SeL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$95e6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$95e6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useCheckOnline = ()=>{
+    _s();
+    const [isOnline, setIsOnline] = (0, _react.useState)(true);
+    (0, _react.useEffect)(()=>{
+        window.addEventListener("online", ()=>{
+            setIsOnline(true);
+        });
+        window.addEventListener("offline", ()=>{
+            setIsOnline(false);
+        });
+    }, []);
+    return isOnline;
+};
+_s(useCheckOnline, "mRBquyBAMh60D2Q5WI/A8/L/7j4=");
+exports.default = useCheckOnline;
+
+  $parcel$ReactRefreshHelpers$95e6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"25EXR":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ac13 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34580,7 +34626,7 @@ $RefreshReg$(_c, "RestaurantMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/useSelectedRestaurant":"kvL1E"}],"kvL1E":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../../utils/useSelectedRestaurant":"kvL1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kvL1E":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8e84 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

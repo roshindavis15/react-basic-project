@@ -2,6 +2,7 @@ import { restaurantData } from "../config";
 import RestruantCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
+import useCheckOnline from "../../utils/useCheckOnline";
 
 
 
@@ -19,8 +20,16 @@ const Body = () => {
     const [filteredRestaurants,setFilteredRestaurants]=useState(restaurantData)  //useState for restuarant
     const [searchInput,setSearchInput]=useState('');    //useState for search
     
-
+    const isOnline=useCheckOnline()
     
+   if (!isOnline){
+        return (
+        <h1>you are offline</h1>
+        )
+    }
+    
+
+
 
    
 
