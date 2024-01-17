@@ -35,36 +35,31 @@ const Body = () => {
 
     return (filteredRestaurants.length===0)? <Shimmer/>:(
         <>
-            <div className="search-container">
-                <input 
-                type="text"
-                 className="search-input" 
-                 placeholder="search" 
-                 value={searchInput}
-                 onChange={(e)=>{
-                    setSearchInput(e.target.value)
-                 }}
-                 />
-                 <button className="search-btn"
-                 onClick={()=>{
+           <div className="search-container p-5 my-5">
+    <input
+        type="text"
+        className="search-input bg-white focus:outline-none border-2 border-purple-300 rounded-md p-2"
+        placeholder="Search"
+        value={searchInput}
+        onChange={(e) => {
+            setSearchInput(e.target.value);
+        }}
+    />
+    <button
+        className="search-btn ml-2 bg-purple-600 hover:bg-purple-700 text-white rounded-md py-2 px-4"
+        onClick={() => {
+            // Function for filtering the data
+            const data = filterData(searchInput, restaurantData);
+            setFilteredRestaurants(data);
+        }}
+    >
+        Search
+    </button>
+</div>
 
-                    //function for filtering the data 
-
-                    const data=filterData(searchInput,restaurantData);
-                    
-
-                    setFilteredRestaurants(data)
-                 }}
-                 
-                 >
-                    Search
-                    </button>
-                 
-
-            </div>  
 
               
-            <div className="restraunt-list">
+            <div className="flex gap-8">
                 {filteredRestaurants.map((restaurant, index) => (
 
                     //passing the restuarant to the component
